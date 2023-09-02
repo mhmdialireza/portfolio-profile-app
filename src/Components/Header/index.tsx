@@ -27,14 +27,14 @@ const Header = () => {
       style={{ boxShadow: headerShadow }}
     >
       <div className={`innerWidth ${css.container} flexCenter`}>
-        <div className={css.name}>Binjan</div>
+        <div className={css.name}>Alireza</div>
         <ul
           className={`flexCenter ${css.menu}`}
           ref={menuRef}
           style={getMenuStyles(menuOpened)}
         >
           <li>
-            <a href='#experties'>Services</a>
+            <a href='#expertise'>Services</a>
           </li>
           <li>
             <a href='#work'>Experience</a>
