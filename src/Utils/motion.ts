@@ -19,7 +19,7 @@ export const headerVariants = {
   },
 };
 
-export const slideIn = (direction: string, type: any, delay: any, duration: any) => ({
+export const slideIn = (direction: string, type: string, delay: number, duration: number) => ({
   hidden: {
     x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
     y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
@@ -46,7 +46,7 @@ export const staggerContainer = (staggerChildren: any, delayChildren: any) => ({
   },
 });
 
-export const textVariant = (delay: any) => ({
+export const textVariant = (delay: number) => ({
   hidden: {
     y: 50,
     opacity: 0,
@@ -87,7 +87,7 @@ export const textVariant2 = {
   },
 };
 
-export const fadeIn = (direction: any, type: any, delay: any, duration: any) => ({
+export const fadeIn = (direction: string, type: string, delay: number, duration: number) => ({
   hidden: {
     x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
     y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
@@ -123,7 +123,7 @@ export const planetVariants = (direction: string) => ({
   },
 });
 
-export const zoomIn = (delay: any, duration: any) => ({
+export const zoomIn = (delay: number, duration: number) => ({
   hidden: {
     scale: 0,
     opacity: 0,
