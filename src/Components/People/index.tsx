@@ -11,7 +11,7 @@ const People = () => {
       initial='hidden'
       whileInView='show'
       viewport={{ once: false, amount: 0.25 }}
-      section
+      // section
       className={`paddings ${css.wrapper}`}
     >
       <a className='anchor' id='people'></a>
