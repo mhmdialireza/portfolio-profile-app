@@ -19,7 +19,7 @@ export const headerVariants = {
   },
 };
 
-export const slideIn = (direction: any, type: any, delay: any, duration: any) => ({
+export const slideIn = (direction: string, type: any, delay: any, duration: any) => ({
   hidden: {
     x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
     y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
@@ -62,6 +62,16 @@ export const textVariant = (delay: any) => ({
   },
 });
 
+export const textContainer = {
+  hidden: {
+    opacity: 0,
+  },
+  show: (i = 1) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: i * 0.1 },
+  }),
+};
+
 export const textVariant2 = {
   hidden: {
     opacity: 0,
@@ -92,6 +102,23 @@ export const fadeIn = (direction: any, type: any, delay: any, duration: any) => 
       delay,
       duration,
       ease: "easeOut",
+    },
+  },
+});
+
+//TODO: define direction type
+export const planetVariants = (direction: string) => ({
+  hidden: {
+    x: direction === "left" ? "-100%" : "100%",
+    rotate: 120,
+  },
+  show: {
+    x: 0,
+    rotate: 0,
+    transition: {
+      type: "spring",
+      duration: 1.8,
+      delay: 0.5,
     },
   },
 });
@@ -134,6 +161,21 @@ export const footerVariants = {
   },
 };
 
+export const draw = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: () => {
+    const delay = 1.5;
+    return {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { delay, type: "spring", duration: 5, bounce: 0 },
+        opacity: { delay, duration: 0.01 },
+      },
+    };
+  },
+};
+
 export const staggerChildren = {
   hidden: { opacity: 0 },
   show: {
@@ -144,8 +186,12 @@ export const staggerChildren = {
   },
 };
 
+export const listItem = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
 
-export const getMenuStyles = (menuOpened: any) => {
+export const getMenuStyles = (menuOpened: boolean) => {
   if (document.documentElement.clientWidth <= 640) {
     console.log("outside of sidebar reached")
     return { right: !menuOpened && "-100%" };
