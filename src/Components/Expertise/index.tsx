@@ -8,7 +8,7 @@ const Expertise = () => {
     <section className={css.wrapper}>
       <a className='anchor' id='expertise'></a>
       <motion.div
-        variants={staggerContainer}
+        variants={staggerContainer(1,1)}
         initial='hidden'
         whileInView='show'
         viewport={{ once: false, amount: 0.25 }}

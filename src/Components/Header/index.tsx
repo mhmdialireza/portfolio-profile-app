@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { CSSProperties, useRef, useState } from 'react';
 import css from './Header.module.scss';
 import { BiPhoneCall, BiMenuAltRight } from 'react-icons/bi';
 import { motion } from 'framer-motion';
@@ -8,7 +8,7 @@ import useHeaderShadow from './../../Hooks/useHeaderShadow';
 
 const Header = () => {
   const menuRef = useRef(null);
-  const [menuOpened, setMenuOpened] = useState(false);
+  const [menuOpened, setMenuOpened] = useState<boolean>(false);
   const headerShadow = useHeaderShadow();
 
   //to handle click outside of sidebar on mobile
@@ -31,7 +31,7 @@ const Header = () => {
         <ul
           className={`flexCenter ${css.menu}`}
           ref={menuRef}
-          style={getMenuStyles(menuOpened)}
+          style={getMenuStyles(menuOpened) as CSSProperties|undefined}
         >
           <li>
             <a href='#expertise'>Services</a>
